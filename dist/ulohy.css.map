@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EAAC,gBAAgB,EAAE,OAAO;CAAG",
+    "sources": [
+        "../scss/main/ulohy.scss"
+    ],
+    "names": [],
+    "file": "ulohy.css"
+}
