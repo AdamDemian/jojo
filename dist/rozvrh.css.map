@@ -1,8 +1,8 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,OAAO;CAC5B",
+    "mappings": "AAAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACb;;AAED,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;EACd,WAAW,EAAE,kBAAkB;CAClC",
     "sources": [
-        "../scss/main/rozvrh.scss"
+        "../client/scss/main/rozvrh.scss"
     ],
     "names": [],
     "file": "rozvrh.css"
