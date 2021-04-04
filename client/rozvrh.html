@@ -12,14 +12,14 @@
 <body>
     <h1>Rozvrh</h1>
 
-    <div class="rozvrh"></div>
+    <table class="rozvrh"></table>
     <script>
-        fetch("./data.json")
+        fetch("./rozvrh.json")
             .then(response => response.json())
             .then(data => {
                 console.log(data);
                 document.querySelector(".rozvrh").innerText = data;
-            })
+            });
     </script>
 </body>
 

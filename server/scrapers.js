@@ -18,6 +18,7 @@ const fs = require('fs');
         page.waitForNavigation(), // The promise resolves after navigation has finished
         page.click('.skgdFormSubmit'), // Clicking the link will indirectly cause a navigation
     ]);
+    await page.screenshot({ path: 'example.png' });
 
     let data = await page.evaluate(() => {
         let rozvrh = document.querySelector('ul[class="rozvrh clearfix"]').innerText;
@@ -25,7 +26,7 @@ const fs = require('fs');
         return (rozvrh);
     });
 
-    fs.writeFile('../client/data.json', JSON.stringify(data), err => err ? console.log(err) : null);
+    fs.writeFile('../client/rozvrh.json', JSON.stringify(data), err => err ? console.log(err) : null);
 
     await browser.close();
 })();
