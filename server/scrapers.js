@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const fs = require('fs');
 
 (async () => {
     let = url = 'https://zssebechleby.edupage.org/login/';
@@ -17,18 +18,15 @@ const puppeteer = require('puppeteer');
         page.waitForNavigation(), // The promise resolves after navigation has finished
         page.click('.skgdFormSubmit'), // Clicking the link will indirectly cause a navigation
     ]);
+    await page.screenshot({ path: 'example.png' });
 
     let data = await page.evaluate(() => {
         let rozvrh = document.querySelector('ul[class="rozvrh clearfix"]').innerText;
 
-        return {
-            rozvrh,
-        }
+        return (rozvrh);
     });
 
-    console.log(data);
-
-    debugger;
+    fs.writeFile('./data.json', JSON.stringify(data), err => err ? console.log(err) : null);
 
     await browser.close();
 })();
