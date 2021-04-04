@@ -1,5 +1,11 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+let doteenv = require('dotenv').config();
+
+username = process.env.MY_USERNAME;
+password = process.env.MY_PASSWORD;
+
+console.log(username, password);
 
 (async () => {
     let = url = 'https://zssebechleby.edupage.org/login/';
@@ -11,8 +17,8 @@ const fs = require('fs');
 
 
     // Login
-    await page.type('#login_Login_1e1', 'AdamDemian');
-    await page.type('#login_Login_1e2', '1r68kd33lm');
+    await page.type('#login_Login_1e1', `${username}`);
+    await page.type('#login_Login_1e2', `${password}`);
 
     await Promise.all([
         page.waitForNavigation(), // The promise resolves after navigation has finished
