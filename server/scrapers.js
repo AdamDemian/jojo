@@ -1,11 +1,10 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-let doteenv = require('dotenv').config();
+const doteenv = require('dotenv').config();
 
 username = process.env.MY_USERNAME;
 password = process.env.MY_PASSWORD;
 
-console.log(username, password);
 
 (async () => {
     let = url = 'https://zssebechleby.edupage.org/login/';
@@ -32,7 +31,7 @@ console.log(username, password);
         return (rozvrh);
     });
 
-    fs.writeFile('../client/rozvrh.json', JSON.stringify(data), err => err ? console.log(err) : null);
+    fs.writeFile('../views/rozvrh.json', JSON.stringify(data), err => err ? console.log(err) : null);
 
     await browser.close();
 })();
