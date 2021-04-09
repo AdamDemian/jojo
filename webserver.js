@@ -5,23 +5,27 @@ const port = process.env.PORT || 3000
 const path = require('path')
 const fs = require('fs')
 
-rozvrhJson = path.join('C:/HTML/jojo/views')
+const ppm = require('jsonfile')
 
-app.locals.rozvrhdata = require('./views/rozvrh.json')
+// const rozvrhJson = '{"rozvrhJson" : "' + ppm.RTPPMDataMsgV1.rozvrhJson + '"}';
+
+// console.log(jsonfile.readFileSync(rozvrhJson))
+
 
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
-app.use('/json', express.static(path.join(__dirname, 'views')));
-
+const rozvrhJson = app.use('/', express.static(path.join(__dirname, 'views')));
 
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
     res.render('index')
+    res.send(rozvrhJson);
 })
 
 app.get('/rozvrh', (req, res) => {
     res.render('rozvrh')
 })
+
 
 app.get('/ulohy', (req, res) => {
     res.render('ulohy')

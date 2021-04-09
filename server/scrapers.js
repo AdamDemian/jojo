@@ -31,7 +31,23 @@ password = process.env.MY_PASSWORD;
         return (rozvrh);
     });
 
-    fs.writeFile('../views/rozvrh.json', JSON.stringify(data), err => err ? console.log(err) : null);
+    let calendar = await page.evaluate(() => {
+        function days() {
+            const day1 = document.getElementsByClassName('date').item(0).innerText;
+            const day2 = document.getElementsByClassName('date').item(1).innerText;
+            const day3 = document.getElementsByClassName('date').item(2).innerText;
+            const day4 = document.getElementsByClassName('date').item(3).innerText;
+            const day5 = document.getElementsByClassName('date').item(4).innerText;
+            const day6 = document.getElementsByClassName('date').item(5).innerText;
+            const day7 = document.getElementsByClassName('date').item(6).innerText;
+        }
+
+        return days(day1);
+    });
+
+    console.log(calendar);
+
+    // fs.writeFile('../views/datarozvrh.json', JSON.stringify(data), err => err ? console.log(err) : null);
 
     await browser.close();
 })();
