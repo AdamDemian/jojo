@@ -1,0 +1,25 @@
+{
+  "name": "jojo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamDemian/jojo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamDemian/jojo/issues"
+  },
+  "homepage": "https://github.com/AdamDemian/jojo#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "puppeteer": "^10.1.0"
+  }
+}
