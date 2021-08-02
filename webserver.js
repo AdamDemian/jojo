@@ -5,18 +5,12 @@ const port = process.env.PORT || 3000
 const path = require('path')
 const fs = require('fs')
 
-
-// const rozvrhJson = '{"rozvrhJson" : "' + ppm.RTPPMDataMsgV1.rozvrhJson + '"}';
-
-// console.log(jsonfile.readFileSync(rozvrhJson))
-
-
 app.use('/dist', express.static(path.join(__dirname, 'dist'))); 
 const rozvrhJson = app.use('/', express.static(path.join(__dirname, 'views')));
 
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => { 
     res.render('index')
     res.send(rozvrhJson);
 })

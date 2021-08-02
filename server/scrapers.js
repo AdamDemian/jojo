@@ -23,9 +23,11 @@ password = process.env.MY_PASSWORD;
         page.waitForNavigation(), // The promise resolves after navigation has finished
         page.click('.skgdFormSubmit'), // Clicking the link will indirectly cause a navigation
     ]);
-    await page.screenshot({ path: 'example.png' });
 
-    let data = await page.evaluate(() => {
+    page.screenshot({ path: 'example.png' });
+    
+    let data = await page.evaluate((page) => {
+        waitUntil: 'networkidle2'
         let rozvrh = document.querySelector('ul[class="rozvrh clearfix"]').innerText;
 
         return (rozvrh);
